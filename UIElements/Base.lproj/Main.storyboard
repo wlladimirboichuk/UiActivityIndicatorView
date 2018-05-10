@@ -32,13 +32,13 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzZ-l5-at8">
-                                <rect key="frame" x="24" y="137" width="326" height="21"/>
+                                <rect key="frame" x="24" y="182" width="326" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DuQ-JK-vj2">
-                                <rect key="frame" x="72" y="189" width="231" height="30"/>
+                                <rect key="frame" x="72" y="274" width="231" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="n5C-mm-NZx"/>
                                 </constraints>
@@ -46,18 +46,38 @@
                                     <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="6Lq-SR-9cx"/>
                                 </connections>
                             </slider>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter your name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3Uz-e4-EPF">
+                                <rect key="frame" x="74" y="394" width="227" height="30"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SN1-Fd-GHy">
+                                <rect key="frame" x="74" y="501" width="227" height="30"/>
+                                <color key="backgroundColor" red="0.076508276164531708" green="0.63621586561203003" blue="0.81317967176437378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KIl-af-8dV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.5725490196078431" green="0.91764705882352937" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="DuQ-JK-vj2" firstAttribute="top" secondItem="gzZ-l5-at8" secondAttribute="bottom" constant="31" id="3s4-2T-eYt"/>
-                            <constraint firstItem="gzZ-l5-at8" firstAttribute="top" secondItem="I4t-I4-m6f" secondAttribute="bottom" constant="49" id="7dx-d2-IFh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SN1-Fd-GHy" secondAttribute="trailing" constant="74" id="3Y4-R1-xTm"/>
+                            <constraint firstItem="DuQ-JK-vj2" firstAttribute="top" secondItem="gzZ-l5-at8" secondAttribute="bottom" constant="71" id="3s4-2T-eYt"/>
+                            <constraint firstItem="gzZ-l5-at8" firstAttribute="top" secondItem="I4t-I4-m6f" secondAttribute="bottom" constant="94" id="7dx-d2-IFh"/>
+                            <constraint firstItem="SN1-Fd-GHy" firstAttribute="top" secondItem="3Uz-e4-EPF" secondAttribute="bottom" constant="77" id="8OQ-EJ-oUc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gzZ-l5-at8" secondAttribute="trailing" constant="25" id="FeO-M3-Vzm"/>
+                            <constraint firstItem="3Uz-e4-EPF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="74" id="GHV-r7-umf"/>
+                            <constraint firstItem="SN1-Fd-GHy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="74" id="ZRH-Lc-Hal"/>
                             <constraint firstItem="DuQ-JK-vj2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="74" id="cGG-yB-tOU"/>
                             <constraint firstItem="I4t-I4-m6f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="74" id="gDu-mv-s70"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DuQ-JK-vj2" secondAttribute="trailing" constant="74" id="igS-p4-msC"/>
                             <constraint firstItem="gzZ-l5-at8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="jb7-HK-GlC"/>
+                            <constraint firstItem="3Uz-e4-EPF" firstAttribute="top" secondItem="DuQ-JK-vj2" secondAttribute="bottom" constant="91" id="nWp-7P-adL"/>
                             <constraint firstItem="I4t-I4-m6f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="41" id="sCX-CE-wOI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I4t-I4-m6f" secondAttribute="trailing" constant="74" id="wDb-iD-cVW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Uz-e4-EPF" secondAttribute="trailing" constant="74" id="wFK-2h-s5x"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -65,6 +85,7 @@
                         <outlet property="label" destination="gzZ-l5-at8" id="PMr-R9-EwB"/>
                         <outlet property="segmentedControl" destination="I4t-I4-m6f" id="cg7-xx-oge"/>
                         <outlet property="slider" destination="DuQ-JK-vj2" id="CTm-dA-GF2"/>
+                        <outlet property="textField" destination="3Uz-e4-EPF" id="5jg-kw-tzL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
