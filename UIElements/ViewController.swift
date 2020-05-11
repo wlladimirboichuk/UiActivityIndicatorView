@@ -1,10 +1,4 @@
-//
-//  ViewController.swift
-//  UIElements
-//
-//  Created by Debash on 07.05.2018.
-//  Copyright © 2018 swiftbook.ru. All rights reserved.
-//
+
 
 import UIKit
 
@@ -15,6 +9,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+   // @IBOutlet weak var progressView: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,17 +40,19 @@ class ViewController: UIViewController {
         activityIndicator.startAnimating()
         UIApplication.shared.beginIgnoringInteractionEvents()
         
+        //progressView.setProgress(progress: 0, animated: true)
+        
         
         // Отслеживаем появление клавиатуры
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(updateTextView(notification:)),
-                                               name: Notification.Name.UIKeyboardWillChangeFrame,
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
                                                object: nil)
         
         // Отслеживаем скрытие клавиатуры
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(updateTextView(notification:)),
-                                               name: Notification.Name.UIKeyboardWillHide,
+                                               name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
         
         UIView.animate(withDuration: 0, delay: 5, options: .curveEaseIn, animations: {
@@ -65,7 +62,9 @@ class ViewController: UIViewController {
             self.textView.isHidden = false
             UIApplication.shared.endIgnoringInteractionEvents()
         }
+        
     }
+    
         
     // Скрытие клавиатуры по тапу за пределами Text View
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -79,10 +78,10 @@ class ViewController: UIViewController {
     @objc func updateTextView(notification: Notification) {
         
         guard let userInfo = notification.userInfo as? [String: AnyObject],
-        let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
             else { return }
         
-        if notification.name == Notification.Name.UIKeyboardWillHide {
+        if notification.name == UIResponder.keyboardWillHideNotification {
             textView.contentInset = UIEdgeInsets.zero
         } else {
             textView.contentInset = UIEdgeInsets(top: 0,

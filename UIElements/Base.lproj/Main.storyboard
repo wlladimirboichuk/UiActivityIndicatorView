@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIElements" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NT6-XR-WAO">
-                                <rect key="frame" x="16" y="84" width="343" height="423"/>
+                                <rect key="frame" x="16" y="128" width="343" height="490"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Managing the Keyboard
 When the user taps in an editable text view, that text view becomes the first responder and automatically asks the system to display the associated keyboard. Because the appearance of the keyboard has the potential to obscure portions of your user interface, it is up to you to make sure that does not happen by repositioning any views that might be obscured. Some system views, like table views, help you by scrolling the first responder into view automatically. If the first responder is at the bottom of the scrolling region, however, you may still need to resize or reposition the scroll view itself to ensure the first responder is visible.
@@ -27,21 +27,24 @@ The appearance of the keyboard itself can be customized using the properties pro
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXn-XY-hp3">
-                                <rect key="frame" x="16" y="33" width="10.5" height="21"/>
+                                <rect key="frame" x="16" y="77" width="10.666666666666664" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="rFX-Db-ul9">
-                                <rect key="frame" x="265" y="29" width="94" height="32"/>
+                                <rect key="frame" x="265" y="73" width="94" height="32"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="sizeFont:" destination="BYZ-38-t0r" eventType="valueChanged" id="vtA-PU-exk"/>
                                 </connections>
                             </stepper>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="9ZF-E0-2h6">
-                                <rect key="frame" x="177.5" y="285.5" width="20" height="20"/>
+                                <rect key="frame" x="177.66666666666666" y="363" width="20" height="20"/>
                             </activityIndicatorView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oi8-zX-j8L">
+                                <rect key="frame" x="16" y="128" width="343" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -51,11 +54,14 @@ The appearance of the keyboard itself can be customized using the properties pro
                             <constraint firstItem="CXn-XY-hp3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="33" id="Jed-7Q-W6k"/>
                             <constraint firstItem="9ZF-E0-2h6" firstAttribute="centerX" secondItem="NT6-XR-WAO" secondAttribute="centerX" id="Jet-ob-qWh"/>
                             <constraint firstItem="NT6-XR-WAO" firstAttribute="top" secondItem="CXn-XY-hp3" secondAttribute="bottom" constant="30" id="NdA-5H-11j"/>
+                            <constraint firstItem="oi8-zX-j8L" firstAttribute="centerX" secondItem="NT6-XR-WAO" secondAttribute="centerX" id="P4K-NI-6fJ"/>
                             <constraint firstItem="CXn-XY-hp3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bdF-pJ-ltd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CXn-XY-hp3" secondAttribute="trailing" constant="348.5" id="cLk-Ra-Ac5"/>
                             <constraint firstItem="rFX-Db-ul9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="29" id="flA-Bi-FCi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NT6-XR-WAO" secondAttribute="bottom" constant="160" id="hDg-Dq-2Hj"/>
+                            <constraint firstItem="oi8-zX-j8L" firstAttribute="width" secondItem="NT6-XR-WAO" secondAttribute="width" id="hOd-iF-f9L"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NT6-XR-WAO" secondAttribute="trailing" constant="16" id="jMl-yW-0PY"/>
+                            <constraint firstItem="oi8-zX-j8L" firstAttribute="top" secondItem="NT6-XR-WAO" secondAttribute="top" id="rIU-dY-P4g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -63,6 +69,7 @@ The appearance of the keyboard itself can be customized using the properties pro
                         <outlet property="activityIndicator" destination="9ZF-E0-2h6" id="veO-cd-1c9"/>
                         <outlet property="bottomConstraint" destination="hDg-Dq-2Hj" id="PG4-hx-OWw"/>
                         <outlet property="countLabel" destination="CXn-XY-hp3" id="vsj-Cz-8ll"/>
+                        <outlet property="progressView" destination="rIU-dY-P4g" id="1hf-gx-RpA"/>
                         <outlet property="stepper" destination="rFX-Db-ul9" id="xEh-J9-Jhw"/>
                         <outlet property="textView" destination="NT6-XR-WAO" id="iY9-RT-GSa"/>
                     </connections>
